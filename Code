@@ -1,0 +1,68 @@
+"""
+@author: Ojas Goyal
+"""
+
+# Answer to Exercise 1
+tup1 = (3, 1, 4, 1, 5, 9, 2, 5, 3, 6)
+tup2 = (7, 8) * 5
+super_tup = tup1 + tup2
+print("Super tuple:", super_tup)
+print("Unique numbers:", set(super_tup))
+
+# Answer to Exercise 2
+list1 = [-4, 2, 7, -6, 3, -5, 8, 10, 4, -10]
+list2 = [1, 7, 8, -10, 2, 6, -1, 10, -3, -8]
+cnt = 0
+for item in list1:
+    if item in list2:
+        cnt += 1
+print('Number of common items is:', cnt)
+
+# Answer to Exercise 3
+growth_rates = [1.03, 0.9, 1.36, 1.23, 1.08, 1.12, 1.55, 1.06, 1.05, 0.92]
+mult = 1
+
+for rate in growth_rates:
+    mult *= rate
+
+geo_mean = mult ** (1/len(growth_rates))
+geo_mean = round(geo_mean, 2)
+
+print('Compounded annual growth rate is:', geo_mean)
+
+# Answer to Exercise 4
+dict1 = {'e' : 2, 'j' : 4, 'a' : 3, 't' : 6, 'q' : 1}
+
+sorted_keys = sorted(dict1.keys(), reverse=True)
+
+for key in sorted_keys:
+    print(f"key: {key} value: {dict1[key]}")
+    
+# Answer to Exercise 5
+lorem = 'ut enim ad minim veniam quis nostrud exercitation'
+lorem_words = lorem.split()
+print(lorem_words)
+
+# The variable lorem_words gets its value by splitting the string stored in the variable 'lorem'.
+# using the split() method. Since no separator is specified, it uses whitespace as the default separator.
+# This splits the string into words based on spaces, resulting in a list of words stored in lorem_words.
+
+word_len = {}
+for word in sorted(lorem_words):
+    word_len[word] = len(word)
+print(word_len)
+
+# Answer to Exercise 6
+mylist = ['action', 'table', 'tennis', 'apple', 'trap']
+# Description of the dictionary setdefault() method:
+# 1. setdefault() method in Python returns the value of the specified key. If the key does not exist, it inserts the key with the specified value.
+# 2. Syntax of setdefault: dictionary.setdefault(key, default_value)
+# 3. Arguments:
+#    - key: Required. The key to be searched in the dictionary.
+#    - default_value: Optional. The value to be inserted for the key if the key is not found. Default is None.
+
+# The relevant setdefault() method in the textbook creates a list of words by their first letters as a dict of lists.
+dictA = {}
+for word in mylist:
+    dictA.setdefault(word[0], []).append(word)
+print('dictA:', dictA)
